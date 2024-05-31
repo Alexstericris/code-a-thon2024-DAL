@@ -4,6 +4,6 @@
 
 <template>
   <main>
-    This is Home
+    const message = ref('This is Home')
   </main>
 </template>

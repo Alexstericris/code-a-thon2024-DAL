@@ -11,8 +11,9 @@ import {RouterLink} from "vue-router";
     </RouterLink>
 
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/assets">Assets</RouterLink>
+    <RouterLink to="/contact">Kontakt</RouterLink>
+    <RouterLink to="/news">News</RouterLink>
+    <RouterLink to="/about">Über</RouterLink>
   </nav>
 </template>
 
