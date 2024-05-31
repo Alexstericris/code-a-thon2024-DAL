@@ -14,8 +14,6 @@ from django.template.loader import get_template
 # Create your views here.
 
 def testemail(request):
-    # TODO NILS: sent email to receiver
-
     context = {
         "receiver_name": "Saium Khan",
         "age": 27,
