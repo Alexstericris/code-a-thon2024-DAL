@@ -10,9 +10,11 @@ import SupportIcon from './icons/IconSupport.vue'
 <template>
   <WelcomeItem>
     <template #icon>
-      <DocumentationIcon />
+      <DocumentationIcon/>
     </template>
-    <template #heading>Documentation</template>
+    <template #heading>Documentation
+
+    </template>
 
     Vue’s
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
@@ -21,7 +23,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
   <WelcomeItem>
     <template #icon>
-      <ToolingIcon />
+      <ToolingIcon/>
     </template>
     <template #heading>Tooling</template>
 
@@ -33,17 +35,17 @@ import SupportIcon from './icons/IconSupport.vue'
     you need to test your components and web pages, check out
     <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
     <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
+    >Cypress Component Testing</a
     >.
 
-    <br />
+    <br/>
 
     More instructions are available in <code>README.md</code>.
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
-      <EcosystemIcon />
+      <EcosystemIcon/>
     </template>
     <template #heading>Ecosystem</template>
 
@@ -59,7 +61,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
   <WelcomeItem>
     <template #icon>
-      <CommunityIcon />
+      <CommunityIcon/>
     </template>
     <template #heading>Community</template>
 
@@ -67,7 +69,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
     Discord server, or
     <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
+    >StackOverflow</a
     >. You should also subscribe to
     <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
     the official
@@ -77,7 +79,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
   <WelcomeItem>
     <template #icon>
-      <SupportIcon />
+      <SupportIcon/>
     </template>
     <template #heading>Support Vue</template>
 
