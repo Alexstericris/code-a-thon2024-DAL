@@ -1,20 +1,17 @@
 <script setup>
 import {RouterLink, RouterView} from 'vue-router'
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import {faCog} from "@fortawesome/free-solid-svg-icons";
+import Navigation from '@/components/Navigation.vue'
 
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125"/>
-
+    <Navigation></Navigation>
+<!--    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125"/>-->
     <div class="wrapper">
       <font-awesome-icon :icon="faCog"/>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
     </div>
   </header>
 

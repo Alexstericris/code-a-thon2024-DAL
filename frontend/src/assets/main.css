@@ -1,2 +1,11 @@
 @import 'variables.css';
 
+.navbar {
+    border-bottom: 1px solid red;
+}
+
+.logo {
+    width: 100%;
+    max-width: 125px;
+    height: auto;
+}
