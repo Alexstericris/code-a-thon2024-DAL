@@ -1,0 +1,18 @@
+assetID;assetDescription;assetStreet;assetPLZ;assetTown;assetStatus;assetBuild;assetType;assetSubtenant
+2143;Bank-/Sparkassengebäude;Europlatz;84512;Rheinstadt;Neubau;Sale and lease back;Kauf;ja
+4135;Verwaltungsgebäude;Lange Straße 45;85423;Hafenstadt;Neubau;Buy and Lease;Kauf;nein
+4569;Alten-, Wohn- und Pflegeheim;Hamburger Straße 33;58721;Schönheim;Neubau;Sale and lease back;Kauf;ja
+4712;Produktionsgebäude;Haribostraße 1;55127;Gummistadt;Neubau;Projektmanagement;Kauf;ja
+5246;Autohaus mit Büro u. Werkstatt;Amselstraße 91;78542;Reisestadt;Bestandsgebäude;GÜ-Vertrag;Erbbaurecht;nein
+5463;Lagerhalle;Amselstraße 93;78542;Reisestadt;Neubau;GÜ-Vertrag;Erbbaurecht;nein
+5472;Parkhaus;Froschgasse 93;58912;Bierstadt;Neubau;Sale and lease back;Kauf;nein 
+6160;Lagerhalle;Weingasse 11;58911;Hasstadt;Neubau;Projektmanagement;Erbbaurecht;nein 
+7412;Produktionsgebäude;Rabenstraße 12;45872;Rabenstadt;Bestandsgebäude;Projektmanagement;Kauf;ja
+7845;Verwaltungsgebäude mit Lagerhalle;Froschgasse 78;58912;Bierstadt;Neubau;Sale and lease back;Kauf;ja
+9017;Lagerhalle;Weingasse 11;58911;Hasstadt;Neubau;Projektmanagement;Erbbaurecht;nein 
+8512;Verwaltungs-/Produktionsgebäude;Bahnhofstraße 22;45213;Sonnenstadt;Neubau;Buy and Lease;Kauf;ja
+8523;Verwaltungsgebäude mit Lagerhalle;Berliner Staße 26;65214;Schönenstadt;Bestandsgebäude;Buy and Lease;Kauf;ja
+8542;Produktionsgebäude;Froschgasse 85;58912;Bierstadt;Neubau;Sale and lease back;Kauf;ja
+5509;Sondergebäude;Weingasse 13;58911;Hasstadt;Neubau;Projektmanagement;Erbbaurecht;nein 
+8956;Lagerhalle;Haribostraße 3;55127;Gummistadt;Neubau;Projektmanagement;Kauf;ja
+9632;Tiefgarage;Musterstaße 85;42121;Musterstadt;Neubau;GÜ-Vertrag;Kauf;nein

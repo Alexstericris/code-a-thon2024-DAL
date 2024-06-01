@@ -1,0 +1,18 @@
+contractName;contractTyp;contractLeasingCompany;companyID;contractStart;contractRuntime;contractEnd;contractRhythm;contractPaymentType;contractInvestment;contractDirectDebit;assetID
+10000.001;TA;Leopina GVG Vermietungs KG;78952;01/04/2024;180;30/03/2039;monatlich;vorschüssig; 65.000.000,00 € ;ja;4712
+10000.002;TA;Leopina GVG Vermietungs KG;78952;01/01/2026;147;30/03/2039;monatlich;vorschüssig; 20.000.000,00 € ;ja;8956
+87526.001;VA;Rabina GVG Vermietungs KG;85421;01/01/2020;240;30/12/2039;monatlich;vorschüssig; 10.500.000,00 € ;nein;5246
+87526.002;VA;Rabina GVG Vermietungs KG;85421;01/08/2023;197;30/12/2039;monatlich;vorschüssig; 3.000.000,00 € ;nein;5463
+78451.050;TA;Fatina GVG Vermietungs KG;25412;01/06/2016;180;30/05/2030;monatlich;vorschüssig; 32.650.000,00 € ;ja;7845
+78451.002;TA;Fatina GVG Vermietungs KG;25412;01/01/2017;174;30.06.2030;monatlich;vorschüssig; 22.750.000,00 € ;ja;8542
+78451.003;TA;Fatina GVG Vermietungs KG;25412;01/01/2020;138;30.06.2030;monatlich;vorschüssig; 5.000.000,00 € ;ja;5472
+68912.021;VA;Fatina GVG Vermietungs KG;25412;01/08/2022;192;30/07/2038;monatlich;nachschüssig; 17.250.000,00 € ;nein;6160
+68912.001;VA;Fatina GVG Vermietungs KG;25412;01/08/2022;192;30/07/2038;monatlich;nachschüssig; 4.890.000,00 € ;nein;9017
+68912.002;VA;Fatina GVG Vermietungs KG;25412;01/05/2023;183;30/07/2038;monatlich;nachschüssig; 8.900.000,00 € ;nein;5009
+22542.001;TA;Fabella GVG Vermietungs KG;98572;01/08/2018;264;30/09/2040;monatlich;vorschüssig; 11.875.500,00 € ;ja;8512
+87412.002;VA;Larina GVG Vermietungs KG;33333;11/12/2022;144;10/12/2034;monatlich;nachschüssig; 94.396.744,18 € ;nein;4135
+32651.001;VA;Sakorina GVG Vermietungs KG;85712;01/01/2025;162;30/06/2038;monatlich;nachschüssig; 12.587.963,00 € ;ja;9632
+56214.001;TA;Sleepina GVG Vermietungs KG;52648;01/10/2009;225;30/06/2028;monatlich;nachschüssig; 4.500.000,00 € ;ja;2143
+78451.001;TA;Fareba GVG Vermietungs KG;65892;01/01/2007;240;30/12/2026;monatlich;nachschüssig; 55.000.000,00 € ;ja;7412
+65983.001;VA;Liebelda GVG Vermietungs KG;85421;01/12/2007;241;30/12/2027;monatlich;vorschüssig; 45.500.000,00 € ;ja;8523
+58931.001;TA;Oparina GVG Vermietungs KG;78542;01/01/2018;288;30/12/2041;monatlich;vorschüssig; 89.000.000,00 € ;nein;4569
