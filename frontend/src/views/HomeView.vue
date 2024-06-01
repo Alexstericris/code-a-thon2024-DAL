@@ -4,63 +4,45 @@ import {faUpRightAndDownLeftFromCenter} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useGlobalStore} from "@/stores/global.js";
 import Http from "@/helpers/Http.js";
+import {useAuthStore} from "@/stores/auth.js";
+import {ref} from "vue";
+import {useRouter} from "vue-router";
 
 const globalStore = useGlobalStore();
-globalStore.backgroundImg='wind.jpg'
+const authStore = useAuthStore();
+const router = useRouter();
+globalStore.backgroundImg = 'wind.jpg'
+const contracts = ref([])
+if (contracts.value.length <= 0) {
+  fetchContracts();
+}
 
-Http.get('/customerportal/getcompanies').then(async response=>{
-  console.log(await response.json());
-})
+function fetchContracts() {
+  Http.get('/customerportal/getcontracts', {companyID: authStore.authUser}).then(async response => {
+    contracts.value = await response.json()
+  });
+}
+
+function onExpand(contract) {
+  globalStore.viewContract = contract
+  console
+  router.push('/contracts/' + contract.contractName + '/view')
+}
 
 </script>
 
 <template>
-  <main class="container" :style="{backgroundImage: 'url(/'+globalStore.backgroundImg+')'}">
-    <div class="row">
-      <Card :hide-footer="true">
-        <template #right-corner>
-          <RouterLink class="link-box" to="/contracts/1/view">
-            <FontAwesomeIcon :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
-          </RouterLink>
-        </template>
-        <template #title>My title</template>
-        <template #subtitle>My subtitle</template>
-        <template #text>My text</template>
-        <!--      <template #footer>My my footer</template>-->
-      </Card>
-      <Card :hide-corner="true" :hide-footer="true">
-        <template #right-corner>
-          <RouterLink class="link-box" to="/contracts/view/contractId1">
-            <FontAwesomeIcon :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
-          </RouterLink>
-        </template>
-        <template #title>My title</template>
-        <template #subtitle>My subtitle</template>
-        <template #text>My text</template>
-        <!--      <template #footer>My my footer</template>-->
-      </Card>
-      <Card :hide-corner="true" :hide-footer="true">
-        <template #right-corner>
-          <RouterLink class="link-box" to="/contracts/view/contractId2">
-            <FontAwesomeIcon :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
-          </RouterLink>
-        </template>
-        <template #title>My title</template>
-        <template #subtitle>My subtitle</template>
-        <template #text>My text</template>
-        <!--      <template #footer>My my footer</template>-->
-      </Card>
-      <Card :hide-corner="true" :hide-footer="true">
-        <template #right-corner>
-          <RouterLink class="link-box" to="/contracts/view/contractId3">
-            <FontAwesomeIcon :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
-          </RouterLink>
-        </template>
-        <template #title>My title</template>
-        <template #subtitle>My subtitle</template>
-        <template #text>My text</template>
-        <!--      <template #footer>My my footer</template>-->
-      </Card>
-    </div>
-  </main>
+  <div class="row">
+    <Card v-for="contract in contracts" :hide-footer="true">
+      <template #right-corner>
+        <FontAwesomeIcon @click="onExpand(contract)" class="link-box"
+                         :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
+
+      </template>
+      <template #title>Vertrag {{ contract.contractName }}</template>
+      <template #subtitle>Begonnen am: {{ contract.contractStart }}</template>
+      <template #text>Contract leasing company {{ contract.contractLeasingCompany }}</template>
+      <!--      <template #footer>My my footer</template>-->
+    </Card>
+  </div>
 </template>

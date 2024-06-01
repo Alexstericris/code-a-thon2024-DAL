@@ -16,4 +16,14 @@ export default class Http {
             }
         });
     }
+
+    static post(url, params = {}) {
+        return fetch(Http.baseUrl + url, {
+            body: JSON.stringify(params),
+            method: 'post',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+    }
 }

@@ -20,7 +20,7 @@ class Command(BaseCommand):
         df = pd.read_csv(csv_file_path,delimiter=';')
 
         for index, row in df.iterrows():
-            Contract(
+            contract=Contract(
                 contractName=row['contractName'],
                 contractTyp=row['contractTyp'],
                 contractLeasingCompany=row['contractLeasingCompany'],
@@ -34,4 +34,5 @@ class Command(BaseCommand):
                 contractDirectDebit=row['contractDirectDebit'],
                 assetID=row['assetID'],
             )
+            contract.save()
             self.stdout.write("created")
