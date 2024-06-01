@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string, get_template
 from django.utils.html import strip_tags
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 from django.core.mail import EmailMessage
 from django.db.models.signals import post_save
@@ -13,7 +14,7 @@ from django.template.loader import get_template
 
 # Create your views here.
 
-def testemail(request):
+def testmail(request):
     context = {
         "receiver_name": "Saium Khan",
         "age": 27,
@@ -51,3 +52,22 @@ def testemail(request):
     #     fail_silently=True
     # )
     return HttpResponse("Email sent")
+
+@csrf_exempt
+def testwrite(pRequest):
+    if pRequest.method == "POST":
+        url = "http://127.0.0.1:8000/emails/testwrite"
+
+        payload = {'test1': 'test2'}
+        files = [
+
+        ]
+        headers = {}
+
+        response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+        print(response.text)
+
+        return HttpResponse("Received post request")
+    else:
+        return HttpResponse("Received no post request")

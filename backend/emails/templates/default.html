@@ -19,7 +19,7 @@
         }
 
         .header {
-            background-color: #007bff;
+            background-color: #ffffff;
             color: #ffffff;
             text-align: center;
             padding: 20px;
@@ -45,20 +45,24 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <h1>This Email is sent from Django project</h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Deutsche_Leasing_2023_logo.svg" alt="Image 3" class="image">
         </div>
         <div class="content">
-            <p>Hello {{ receiver_name }},</p>
-            <p>This is a sample email template for Medium article.</p>
-            <p> Your Age is: {{ age }} </p>
-<!--            <img src=" static 'your/static/file/path'" alt="static image">-->
-            <img src="https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/back01.jpg" alt="Image 3" class="image">
-            <p>Your Profession: {{ profession }}</p>
-            <p> You are: {{ marital_status }}</p>
-            <p>Your address: {{ address }}</p>
+            <p>Guten Tag,</p>
+            <p>dies ist eine automatisch generierte Servicemail.</p>
+            <p>Sie haben eine Benachrichtigung erhalten.</p>
+            <p>Bitte loggen Sie sich baldmöglichst bei Ihrem Account auf deutsche-leasing.de ein.</p>
+            <p>Mit freundlichen Grüßen</p>
+            <p>Die Deutsche Leasing</p>
         </div>
         <div class="footer">
-            &copy; {{ year }} ABC Inc. No rights reserved.
+            <p> &copy; {{ year }} 2024 DAL </p>
+
+            <a href="https://www.dal.de/de/footer/impressum">Impressum</a>
+            <a href="https://www.dal.de/de/footer/datenschutz">Datenschutz</a>
+            <a href="https://www.dal.de/de/footer/verschluesseln-sensibler-e-mails">IT-Sicherheit</a>
+            <a href="https://www.dal.de/de/footer/hinweisgebersystem">Hinweisgebersystem</a>
+            <a href="https://www.dal.de/de/footer/haftungsausschluss">Haftungsausschluss</a>
         </div>
     </div>
 </body>
