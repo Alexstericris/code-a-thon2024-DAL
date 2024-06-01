@@ -3,9 +3,14 @@ import Card from "@/components/reuseables/Card.vue";
 import {faUpRightAndDownLeftFromCenter} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useGlobalStore} from "@/stores/global.js";
+import Http from "@/helpers/Http.js";
 
 const globalStore = useGlobalStore();
 globalStore.backgroundImg='wind.jpg'
+
+Http.get('/customerportal/getcompanies').then(async response=>{
+  console.log(await response.json());
+})
 
 </script>
 
