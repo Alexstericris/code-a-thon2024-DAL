@@ -2,6 +2,7 @@
     --primary-color: #ee0000;
     --secondary-color: #e3bcce;
     --dark-color: #000000;
+    --text-color: #444;
     --bright-color: #fff;
     --blue-color1: #0073bf;
     --blue-color2: #1f82c0;
@@ -10,5 +11,15 @@
     --good-color: #00733a;
     --bad-color: #9e0000;
     --neutral-color: #ff9900;
+    --background-color: #d8d3ce;
+    --yellow-color1: #ffdc55;
+    --yellow-color2: #ffe382;
+    --yellow-color3: #ffeba4;
+    --yellow-color4: #FFF4C5;
+
+
+    --font-size1: 24px;
+    --font-size2: 16px;
     --border-radius: 1em;
+
 }
