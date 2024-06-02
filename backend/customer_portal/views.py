@@ -35,7 +35,16 @@ def getcontracts(request):
             'contractPaymentType': contract.contractPaymentType,
             'contractInvestment': contract.contractInvestment,
             'contractDirectDebit': contract.contractDirectDebit,
-            'assetID': contract.assetID,
+            'asset': {
+                'assetBuild': contract.assetID.assetBuild,
+                'assetDescription': contract.assetID.assetDescription,
+                'assetID': contract.assetID.assetBuild,
+                'assetPLZ': contract.assetID.assetBuild,
+                'assetStreet': contract.assetID.assetBuild,
+                'assetSubtenant': contract.assetID.assetBuild,
+                'assetTown': contract.assetID.assetBuild,
+                'assetType': contract.assetID.assetBuild,
+            },
             'invoices': [{
                 'invoiceID': invoice.invoiceID,
                 'invoiceDate': invoice.invoiceDate,
