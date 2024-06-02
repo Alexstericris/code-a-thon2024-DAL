@@ -23,7 +23,11 @@ const path = computed(() => route.path)
     <Navigation v-if="path!=='/login'"></Navigation>
   </header>
   <main class="container mt-80">
-    <RouterView/>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component"/>
+      </transition>
+    </router-view>
   </main>
   <CustomFooter></CustomFooter>
 </template>
