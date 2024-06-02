@@ -1,23 +1,23 @@
 <script setup>
 
 import AssetsMap from "@/components/AssetsMap.vue";
+import Card from "@/components/reuseables/Card.vue";
 </script>
 
 <template>
-  <div class="about">
-  <div style="display: flex; justify-content: center">
-    <p style="font-family:'Courier New'; font-size: 30px;"><strong>Assets Karte</strong></p>
-    </div>
-    <div style="display: flex; justify-content: center">
-    <AssetsMap></AssetsMap>
+  <div>
+    <Card :hide-footer="true" :hide-corner="true" :hide-subtitle="true">
+      <template #title>
+        <div style="width: 100%; text-align: center">
+          Assets Karte
+        </div>
+      </template>
+      <template #text>
+        <AssetsMap></AssetsMap>
+      </template>
+    </Card>
   </div>
-  </div>
-
 </template>
 
 <style>
-  .about {
-    background-image: url("/wind.jpg");
-    background-size: cover;
-  }
 </style>

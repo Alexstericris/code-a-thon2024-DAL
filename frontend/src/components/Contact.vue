@@ -23,13 +23,12 @@ function toggleCard() {
       <h1>Kontakt Person</h1>
     </div>
     <div class="card-content">
-      <p>Name: Max Mustermann</p>
-      <p>Telefon: 0123 456789</p>
-      <p>Email: max.mustermann@example.com</p>
-      <p>Stadt: Musterstadt</p>
-      <p>Ort: 12345</p>
-      <p>Straße: Musterstraße</p>
-      <p>Hausnummer: 1</p>
+      <p>Name: Thorsten Neumann</p>
+      <p>Telefon: 06131 3949635</p>
+      <p>Email: torsten.neumann@dal.de</p>
+      <p>Stadt: Mainz</p>
+      <p>Ort: 55131</p>
+      <p>Straße: Musterstraße 123</p>
       <!-- Weitere Zeilen können hier hinzugefügt werden -->
     </div>
   </div>
