@@ -19,8 +19,32 @@ def getcompanies(request):
 
 
 def getcontracts(request):
-    contracts = list(Contract.objects.filter(companyID=request.GET.get('companyID')).values())
-    return JsonResponse(contracts, safe=False)
+    contracts = list(
+        Contract.objects.prefetch_related('invoices').filter(companyID=request.GET.get('companyID')).all())
+    serialized_contracts = []
+    for contract in contracts:
+        serialized_contract = {
+            'contractName': contract.contractName,
+            'contractTyp': contract.contractTyp,
+            'contractLeasingCompany': contract.contractLeasingCompany,
+            'companyID': contract.companyID,
+            'contractStart': contract.contractStart,
+            'contractRuntime': contract.contractRuntime,
+            'contractEnd': contract.contractEnd,
+            'contractRhythm': contract.contractRhythm,
+            'contractPaymentType': contract.contractPaymentType,
+            'contractInvestment': contract.contractInvestment,
+            'contractDirectDebit': contract.contractDirectDebit,
+            'assetID': contract.assetID,
+            'invoices': [{
+                'invoiceID': invoice.invoiceID,
+                'invoiceDate': invoice.invoiceDate,
+                'invoiceCosts': invoice.invoiceCosts,
+                'invoiceStatus': invoice.invoiceStatus
+            } for invoice in contract.invoices.all()]
+        }
+        serialized_contracts.append(serialized_contract)
+    return JsonResponse(serialized_contracts, safe=False)
 
 def getcontract(request):
     contracts = list(Contract.objects.filter(contractName=request.GET.get('contractName')).values())
