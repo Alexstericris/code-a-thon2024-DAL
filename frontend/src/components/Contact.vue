@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 
 function toggleCard() {
-  var card = document.getElementById('card');
+  var card = document.getElementById('card-1');
   if (card.style.display === 'none' || card.style.display === '') {
     card.style.display = 'block';
   } else {
@@ -18,7 +18,7 @@ function toggleCard() {
       <font-awesome-icon class="button" :icon="faAddressBook" />
     </button>
   </div>
-  <div class="card" id="card">
+  <div class="card" id="card-1">
     <div class="card-header">
       <h1>Kontakt Person</h1>
     </div>
