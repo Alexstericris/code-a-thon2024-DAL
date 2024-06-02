@@ -6,7 +6,7 @@ import AssetsMap from "@/components/AssetsMap.vue";
 <template>
   <div class="about">
   <div style="display: flex; justify-content: center">
-    <p style="font-family:'Courier New'; font-size: 30px;"><strong>Assets Karte</strong></p>
+    <p style="font-size: 30px;"><strong>Assets Karte</strong></p>
     </div>
     <div style="display: flex; justify-content: center">
     <AssetsMap></AssetsMap>
@@ -16,8 +16,5 @@ import AssetsMap from "@/components/AssetsMap.vue";
 </template>
 
 <style>
-  .about {
-    background-image: url("/wind.jpg");
-    background-size: cover;
-  }
+
 </style>
