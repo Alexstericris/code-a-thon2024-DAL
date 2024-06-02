@@ -27,8 +27,14 @@ function login() {
       <div class="box-inner">
         <img alt="DAL" src="@/assets/Logo_DAL_RGB.svg"/>
         <form @submit.prevent="login()">
-          <input v-model="email" name="email" class="mb-10" type="text" placeholder="Email" required>
-          <div style="display: flex; justify-content: end">
+          <div class="input-container">
+            <input v-model="email" name="email" class="mb-10" type="text" placeholder="Email" required>
+          </div>
+          <div class="input-container">
+            <input v-model="passwort" name="password" class="mb-10" type="text" placeholder="Passwort" required>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <button class="btn-primary">Sign in</button>
             <button class="btn-primary">Login</button>
           </div>
         </form>
@@ -37,6 +43,12 @@ function login() {
   </div>
 </template>
 
-<style scoped>
+<style>
+.btn-primary{
+  width: 40%;
+}
 
+.input-container {
+  margin-bottom: 10px;
+}
 </style>
