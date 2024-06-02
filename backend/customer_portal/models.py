@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Company(models.Model):
     companyID = models.CharField(max_length=200)
     companyName = models.CharField(max_length=200)
@@ -21,15 +22,9 @@ class Users(models.Model):
     userPhone = models.CharField(max_length=200)
     companyID = models.CharField(max_length=200)
 
-class Invoices(models.Model):
-    invoiceID = models.CharField(max_length=200)
-    invoiceDate = models.CharField(max_length=200)
-    invoiceCosts = models.CharField(max_length=200)
-    invoiceStatus = models.CharField(max_length=200)
-    contractID = models.CharField(max_length=200)
 
 class Assets(models.Model):
-    assetID = models.CharField(max_length=200)
+    assetID = models.CharField(max_length=200, unique=True)
     assetDescription = models.CharField(max_length=200)
     assetStreet = models.CharField(max_length=200)
     assetPLZ = models.CharField(max_length=200)
@@ -39,8 +34,9 @@ class Assets(models.Model):
     assetType = models.CharField(max_length=200)
     assetSubtenant = models.CharField(max_length=200)
 
+
 class Contract(models.Model):
-    contractName = models.CharField(max_length=200)
+    contractName = models.CharField(max_length=200, unique=True)
     contractTyp = models.CharField(max_length=200)
     contractLeasingCompany = models.CharField(max_length=500)
     companyID = models.CharField(max_length=500)
@@ -51,18 +47,32 @@ class Contract(models.Model):
     contractPaymentType = models.CharField(max_length=200)
     contractInvestment = models.CharField(max_length=500)
     contractDirectDebit = models.CharField(max_length=200)
-    assetID = models.CharField(max_length=200)
+    assetID = models.ForeignKey(Assets, on_delete=models.CASCADE, db_column='assetID', to_field='assetID',
+                                related_name='assets')
+
+
+class Invoices(models.Model):
+    invoiceID = models.CharField(max_length=200)
+    invoiceDate = models.CharField(max_length=200)
+    invoiceCosts = models.CharField(max_length=200)
+    invoiceStatus = models.CharField(max_length=200)
+    contractID = models.ForeignKey(Contract, on_delete=models.CASCADE, db_column='contractID', to_field='contractName',
+                                   related_name='invoices')
+
 
 class Event(models.Model):
     eventID = models.CharField(max_length=200)
-    contractID = models.CharField(max_length=200)
+    contractID = models.ForeignKey(Contract, on_delete=models.CASCADE, db_column='contractID', to_field='contractName',
+                                   related_name='events')
     eventName = models.CharField(max_length=200)
     eventDate = models.CharField(max_length=200)
+
 
 class Formular(models.Model):
     name = models.CharField(max_length=200)
 
+
 class Message(models.Model):
     messageName = models.CharField(max_length=200)
 
-#data fill
+# data fill

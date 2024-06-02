@@ -1,8 +1,19 @@
 <script setup>
 import {ref} from "vue";
-import {RouterLink} from "vue-router";
+import {RouterLink, useRouter} from "vue-router";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import {faMailBulk, faRightToBracket} from "@fortawesome/free-solid-svg-icons";
+import {faMailBulk, faRightToBracket,faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
+import {useAuthStore} from "@/stores/auth.js";
+const authStore=useAuthStore()
+const router = useRouter();
+function logout() {
+  console.log('t')
+  authStore.authUser = null
+  console.log('t2')
+  localStorage.removeItem('companyID')
+  console.log('t3')
+  router.push('login')
+}
 
 </script>
 
@@ -20,9 +31,12 @@ import {faMailBulk, faRightToBracket} from "@fortawesome/free-solid-svg-icons";
       <RouterLink to="/mails">
         <font-awesome-icon class="navtab" :icon="faMailBulk"/>
       </RouterLink>
-      <RouterLink to="/login">
+      <RouterLink v-if="!authStore.authUser" to="/login">
         <font-awesome-icon class="navtab" :icon="faRightToBracket"/>
       </RouterLink>
+       <div v-if="authStore.authUser" @click="logout()">
+        <font-awesome-icon class="navtab" :icon="faRightFromBracket"/>
+      </div>
 
     </div>
   </nav>

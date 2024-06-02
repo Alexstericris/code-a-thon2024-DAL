@@ -25,13 +25,18 @@ SECRET_KEY = 'django-insecure-vkx1(i32dr3h581&3mu5&=1k4(k^=u$youk84=$cm-pc7$gfhh
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost:5173',
+    "http://localhost:5173",
     'localhost',
-    '*',
+    '127.0.0.1',
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://localhost",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173"
 ]
 
 
@@ -53,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -131,7 +136,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # EMAIL SERVER
-EMAIL_HOST = '0.0.0.0'
+EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''

@@ -15,7 +15,7 @@ from django.template.loader import get_template
 # Create your views here.
 
 def testmail(request):
-    context = {
+    context  = {
         "receiver_name": "Saium Khan",
         "age": 27,
         "profession": "Software Developer",
@@ -54,20 +54,35 @@ def testmail(request):
     return HttpResponse("Email sent")
 
 @csrf_exempt
-def testwrite(pRequest):
-    if pRequest.method == "POST":
-        url = "http://127.0.0.1:8000/emails/testwrite"
+def testwrite(request):
+    if request.method == "POST":
+        subject = request.POST.get('subject')
+        #body = request.POST.get('body')
+        from_email = request.POST.get('from_email')
+        to = request.POST.get('to')
+        reply_to = request.POST.get('reply_to')
 
-        payload = {'test1': 'test2'}
-        files = [
-
-        ]
-        headers = {}
-
-        response = requests.request("POST", url, headers=headers, data=payload, files=files)
-
-        print(response.text)
-
-        return HttpResponse("Received post request")
+        context = {
+            "receiver_name": "Saium Khan",
+            "age": 27,
+            "profession": "Software Developer",
+            "marital_status": "Divorced",
+            "address": "Planet Earth",
+            "year": 2023
+        }
+        message = get_template("default.html").render(context)
+        mail = EmailMessage(
+            subject=subject,
+            body=message,
+            from_email=from_email,
+            to=[to],
+            reply_to=[reply_to],
+        )
+        nilskocht(mail)
+        return HttpResponse("Email sent to ")
     else:
         return HttpResponse("Received no post request")
+
+def nilskocht(mail):
+    mail.content_subtype = "html"
+    mail.send()
