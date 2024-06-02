@@ -10,7 +10,7 @@ globalStore.backgroundImg = 'solar.webp'
 </script>
 
 <template>
-  <Card>
+  <Card :hide-footer="true">
     <template #right-corner>
       <RouterLink class="link-box" style="background: var(--primary-red)" to="/">
           <FontAwesomeIcon :icon="faDownLeftAndUpRightToCenter"></FontAwesomeIcon>
@@ -25,7 +25,7 @@ globalStore.backgroundImg = 'solar.webp'
     <template #text>
               <div style="display: flex">
           <div style="width: 50%">
-            <Card :hide-corner="true" :hide-footer="true">
+            <Card :hide-corner="true">
               <template #title>Asset:</template>
               <template #subtitle>{{globalStore.viewContract.asset.assetID}}</template>
               <template #text>
