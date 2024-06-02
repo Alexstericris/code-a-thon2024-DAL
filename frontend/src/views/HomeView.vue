@@ -4,6 +4,7 @@ import {faUpRightAndDownLeftFromCenter} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useGlobalStore} from "@/stores/global.js";
 import Http from "@/helpers/Http.js";
+import AssetsMap from "@/components/AssetsMap.vue";
 
 const globalStore = useGlobalStore();
 globalStore.backgroundImg='wind.jpg'
