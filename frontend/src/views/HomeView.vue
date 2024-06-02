@@ -26,14 +26,23 @@ function fetchContracts() {
 
 function onExpand(contract) {
   globalStore.viewContract = contract
-  console
+  router.push('/contracts/' + contract.contractName + '/view')
+}
+
+function onExpandAsset(contract) {
+  globalStore.viewContract = contract
+  router.push('/contracts/' + contract.contractName + '/view')
+}
+
+function onExpandInvoice(contract) {
+  globalStore.viewContract = contract
   router.push('/contracts/' + contract.contractName + '/view')
 }
 
 </script>
 
 <template>
-  <div class="row">
+  <div class="row" style="justify-content: space-around">
     <Card v-for="contract in contracts" :hide-footer="true">
       <template #right-corner>
         <FontAwesomeIcon @click="onExpand(contract)" class="link-box"
@@ -42,7 +51,51 @@ function onExpand(contract) {
       </template>
       <template #title>Vertrag {{ contract.contractName }}</template>
       <template #subtitle>Begonnen am: {{ contract.contractStart }}</template>
-      <template #text>Contract leasing company {{ contract.contractLeasingCompany }}</template>
+      <template #text>
+        <div class="mb-10">
+          Contract leasing company: {{ contract.contractLeasingCompany }}
+        </div>
+        <div style="display: flex">
+          <div style="width: 50%">
+            <Card>
+              <template #right-corner>
+                <FontAwesomeIcon @click="onExpandAsset(contract.asset)" class="link-box"
+                                 :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
+              </template>
+              <template #title>Asset:</template>
+              <template #subtitle>{{contract.asset.assetID}}</template>
+              <template #text>
+                <div>{{contract.asset.assetDescription}}</div>
+                <div>Strasse : {{contract.asset.assetStreet}}</div>
+                <div>Ort: {{contract.asset.assetPLZ}} {{contract.asset.assetTown}}</div>
+              </template>
+               <template #footer>
+                <div>Status: {{ contract.asset.assetStatus }}</div>
+              </template>
+            </Card>
+          </div>
+          <div style="width: 50%">
+            <Card v-if="contract.invoices.length>0">
+              <template #right-corner>
+                <FontAwesomeIcon @click="onExpandInvoice(contract.invoices.at(-1))" class="link-box"
+                                 :icon="faUpRightAndDownLeftFromCenter"></FontAwesomeIcon>
+              </template>
+              <template #title>Rechnung:</template>
+              <template #subtitle>{{ contract.invoices.at(-1).invoiceID }}</template>
+              <template #text>
+                <div>Datum: {{ contract.invoices.at(-1).invoiceDate }}</div>
+                <div>Summe: {{ contract.invoices.at(-1).invoiceCosts }}</div>
+              </template>
+              <template #footer>
+                <div>Status: {{ contract.invoices.at(-1).invoiceStatus }}</div>
+              </template>
+            </Card>
+            <Card v-else :hide-body="true" :hide-subtitle="true" :hide-corner="true" :hide-footer="true">
+              <template #title>Keine Rechnungen</template>
+            </Card>
+          </div>
+        </div>
+      </template>
       <!--      <template #footer>My my footer</template>-->
     </Card>
   </div>

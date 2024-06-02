@@ -23,7 +23,7 @@ function logout() {
       <RouterLink to="/">
         <img alt="DAL" class="logo" src="@/assets/Logo_DAL_RGB.svg"/>
       </RouterLink>
-      <RouterLink class="navtab" to="/">Home</RouterLink>
+      <RouterLink class="navtab" to="/">Verträge</RouterLink>
       <RouterLink class="navtab" to="/about">About</RouterLink>
       <RouterLink class="navtab" to="/assets">Assets</RouterLink>
     </div>

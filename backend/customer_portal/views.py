@@ -44,6 +44,7 @@ def getcontracts(request):
                 'assetSubtenant': contract.assetID.assetBuild,
                 'assetTown': contract.assetID.assetBuild,
                 'assetType': contract.assetID.assetBuild,
+                'assetStatus': contract.assetID.assetStatus,
             },
             'invoices': [{
                 'invoiceID': invoice.invoiceID,

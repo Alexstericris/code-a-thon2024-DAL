@@ -1,12 +1,15 @@
 <script setup>
 import {defineProps} from "vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import {faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faUpRightAndDownLeftFromCenter, faXmark} from "@fortawesome/free-solid-svg-icons";
 
 const props = defineProps(
     {
       hideCorner: Boolean,
-      hideFooter: Boolean
+      hideFooter: Boolean,
+      hideSubtitle: Boolean,
+      hideText: Boolean,
+      hideBody: Boolean
     });
 </script>
 
@@ -24,17 +27,16 @@ const props = defineProps(
       <div class="card-title">
         <slot name="title">Default title</slot>
         <slot v-if="!hideCorner" name="right-corner">
-          <button>
-            <FontAwesomeIcon :icon="faXmark"></FontAwesomeIcon>
-          </button>
+          <FontAwesomeIcon class="link-box"
+                         :icon="faXmark"></FontAwesomeIcon>
         </slot>
       </div>
-      <div class="card-subtitle">
+      <div v-if="!hideSubtitle" class="card-subtitle">
         <slot name="subtitle">Default subtitle</slot>
       </div>
     </div>
-    <div class="card-body">
-      <div class="card-text">
+    <div v-if="!hideBody" class="card-body">
+      <div v-if="!hideText" class="card-text">
         <slot name="text">Default text</slot>
       </div>
     </div>
