@@ -180,3 +180,16 @@ input[type='text'] {
     z-index: -1;
     background-size: cover;
 }
+
+.footer {
+  background-color: var(--bright-color);
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

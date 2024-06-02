@@ -16,18 +16,7 @@
 </template>
 
 <style scoped>
-.footer {
-  background-color: var(--bright-color);
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+
 
 .footer a {
   text-decoration: none;
