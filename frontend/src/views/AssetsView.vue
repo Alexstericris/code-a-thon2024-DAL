@@ -5,16 +5,15 @@ import AssetsMap from "@/components/AssetsMap.vue";
 
 <template>
   <div class="about">
-  <div style="display: flex; justify-content: center">
-    <p style="font-size: 30px;"><strong>Assets Karte</strong></p>
+    <div style="display: flex; justify-content: center">
+      <p><strong>Assets Karte</strong></p>
     </div>
     <div style="display: flex; justify-content: center">
-    <AssetsMap></AssetsMap>
-  </div>
+      <AssetsMap></AssetsMap>
+    </div>
   </div>
 
 </template>
 
 <style>
-
 </style>

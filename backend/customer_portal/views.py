@@ -59,3 +59,4 @@ def getcontracts(request):
 def getcontract(request):
     contracts = list(Contract.objects.filter(contractName=request.GET.get('contractName')).values())
     return JsonResponse(contracts, safe=False)
+
