@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation.vue'
 import {computed} from "vue";
 import {useGlobalStore} from "@/stores/global.js";
 import {useAuthStore} from "@/stores/auth.js";
+import CustomFooter from "@/components/CustomFooter.vue";
 
 const globalStore = useGlobalStore();
 const authStore = useAuthStore();
@@ -24,6 +25,7 @@ const path = computed(() => route.path)
   <main class="container mt-80">
     <RouterView/>
   </main>
+  <CustomFooter></CustomFooter>
 </template>
 
 <style scoped>
