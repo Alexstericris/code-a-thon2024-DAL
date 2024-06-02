@@ -25,18 +25,19 @@ function fetchContracts() {
 }
 
 function onExpand(contract) {
+  console.log(contract)
   globalStore.viewContract = contract
   router.push('/contracts/' + contract.contractName + '/view')
 }
 
-function onExpandAsset(contract) {
-  globalStore.viewContract = contract
-  router.push('/contracts/' + contract.contractName + '/view')
+function onExpandAsset(asset) {
+  globalStore.viewAsset = asset
+  router.push('/assets/' + asset.assetID + '/view')
 }
 
-function onExpandInvoice(contract) {
-  globalStore.viewContract = contract
-  router.push('/contracts/' + contract.contractName + '/view')
+function onExpandInvoice(invoice) {
+  globalStore.viewInvoice = invoice
+  router.push('/invoices/' + invoice.invoiceID + '/view')
 }
 
 </script>
